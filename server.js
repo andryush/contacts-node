@@ -1,8 +1,10 @@
 const express = require("express");
 const errorHandler = require("./middleware/errorMiddleware");
+const connectToDb = require("./config/dbConnection");
 // eslint-disable-next-line no-unused-vars
 const dotenv = require("dotenv").config();
 
+connectToDb();
 const app = express();
 const port = process.env.PORT || 5001;
 
