@@ -77,4 +77,11 @@ const signInUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { signUpUser, signInUser };
+// @desc current user info
+// @route /users/me
+// @access private
+const me = asyncHandler(async (req, res) => {
+  res.status(200).json(req.user);
+});
+
+module.exports = { signUpUser, signInUser, me };
